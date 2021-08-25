@@ -31,7 +31,8 @@ const IndexPage = () => {
 
       <section className={css.keyboard_display}>
         <div>
-          {navigator?.platform.indexOf('Mac') === -1 ? (
+          {typeof window !== 'undefined' &&
+          navigator.platform.indexOf('Mac') === -1 ? (
             <MacMainPart keyPressed={keyPressed} css={css} />
           ) : (
             <WinMainPart keyPressed={keyPressed} css={css} />
