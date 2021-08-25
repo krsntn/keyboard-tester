@@ -15,9 +15,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
-    .arrow_part {
-      margin: 0 4px;
+    .keyboard_right_part {
+      display: flex;
+    }
+
+    .border_spaces {
+      margin: 0 2px;
     }
 
     .detected {
