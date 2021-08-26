@@ -31,7 +31,7 @@ const IndexPage = () => {
       <Seo />
 
       <section className={css.keyboard_display}>
-        {document.body.clientWidth < 500 ? (
+        {typeof window !== 'undefined' && document.body.clientWidth < 500 ? (
           <div className={css.border_spaces}>
             <TinyMainPart keyPressed={keyPressed} css={css} />
           </div>
