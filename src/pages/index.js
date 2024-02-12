@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import Seo from '../components/SEO';
-import ArrowPart from '../components/ArrowPart';
-import WinMainPart from '../components/WinMainPart';
-import MacMainPart from '../components/MacMainPart';
-import TinyMainPart from '../components/TinyMainPart';
-import NumPad from '../components/NumPad';
-import * as css from '../styles/index.module.scss';
+import React, { useState, useEffect, useCallback } from "react";
+import Seo from "../components/SEO";
+import ArrowPart from "../components/ArrowPart";
+import WinMainPart from "../components/WinMainPart";
+import MacMainPart from "../components/MacMainPart";
+import TinyMainPart from "../components/TinyMainPart";
+import NumPad from "../components/NumPad";
+import * as css from "../styles/index.module.scss";
 
 const IndexPage = () => {
   const [keyPressed, setKeyPressed] = useState([]);
@@ -22,8 +22,8 @@ const IndexPage = () => {
   );
 
   useEffect(() => {
-    document.addEventListener('keydown', addDetectedKey);
-    return () => document.removeEventListener('keydown', addDetectedKey);
+    document.addEventListener("keydown", addDetectedKey);
+    return () => document.removeEventListener("keydown", addDetectedKey);
   }, [keyPressed, addDetectedKey]);
 
   return (
@@ -31,15 +31,15 @@ const IndexPage = () => {
       <Seo />
 
       <section className={css.keyboard_display}>
-        {typeof window !== 'undefined' && document.body.clientWidth < 500 ? (
+        {typeof window !== "undefined" && document.body.clientWidth < 500 ? (
           <div className={css.border_spaces}>
             <TinyMainPart keyPressed={keyPressed} css={css} />
           </div>
         ) : (
           <div className={css.border_spaces}>
-            {typeof window !== 'undefined' &&
-            (['iPad', 'iPhone'].includes(navigator.platform) ||
-              navigator.platform.indexOf('Mac') > -1) ? (
+            {typeof window !== "undefined" &&
+            (["iPad", "iPhone"].includes(navigator.platform) ||
+              navigator.platform.indexOf("Mac") > -1) ? (
               <MacMainPart keyPressed={keyPressed} css={css} />
             ) : (
               <WinMainPart keyPressed={keyPressed} css={css} />
@@ -59,8 +59,8 @@ const IndexPage = () => {
       </section>
 
       <footer className={css.footer}>
-        Built by{' '}
-        <a className={css.link} href="https://dev.krsn.xyz">
+        Built by{" "}
+        <a className={css.link} href="https://krsn.xyz">
           karson
         </a>
       </footer>
